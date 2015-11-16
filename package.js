@@ -12,7 +12,7 @@ Package.onUse(function(api) {
   api.use([
     'accounts-base',
     'accounts-ui',
-    'accounts-password'
+    'accounts-password',
     'poetic:tokenizer'
   ], ['client', 'server']);
 
