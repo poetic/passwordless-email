@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'accounts-base',
     'accounts-ui',
     'accounts-password',
-    'poetic:tokenizer'
+    'poetic:tokenizer@0.0.6'
   ], ['client', 'server']);
 
   api.use('email@1.0.7','server')
