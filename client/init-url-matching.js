@@ -68,10 +68,8 @@ Accounts.onLoginFromLink = function(callback){
 
 Accounts.onLoginFromMobile = function(token, callback){
     var response = {};
-    console.log(token)
     Tokenizer.verify(token, function(err, user){
     if(!err){
-      console.log('user found');
       response.user = user;
       callback(null, response);
     }
@@ -97,12 +95,3 @@ function defaultSuccessHandler(token, urlPart) {
 };
 
 Ap._initUrlMatching();
-
-
-if(Meteor.isClient){
-  Meteor.methods({
-   logLink: function(link){
-    console.log(link)
-    },
-  });
-}
