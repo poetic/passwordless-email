@@ -1,7 +1,7 @@
 // taken mostly from https://github.com/meteor/meteor/blob/master/packages/accounts-password/password_server.js#L573
 //need process.env.MAIL_URL for email to work
 
-Accounts.sendLoginEmail = function(userId, address){
+Accounts.sendLoginEmail = function(userId, address, urlScheme){
   var user = Meteor.users.findOne(userId);
 
   if (! user) {
@@ -30,7 +30,7 @@ Accounts.sendLoginEmail = function(userId, address){
     
   user.services.email.verificationTokens.push(tokenRecord);
 
-  var loginUrl = Accounts.urls.login(token);
+  var loginUrl = Accounts.urls.login(token, urlScheme);
 
   var options = {
     to: address,
