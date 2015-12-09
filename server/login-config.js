@@ -1,7 +1,7 @@
 Accounts.urls.login = function(token, urlScheme){
   var base = encodeURIComponent(Meteor.absoluteUrl('#/login/' + token));
   var custom = encodeURIComponent('' + urlScheme + '' + token);
-  return MeteorSettingsPublic.REDIRECT_URL + '?base=' + base + '&custom=' + custom 
+  return Meteor.settings.public.REDIRECT_URL + '?base=' + base + '&custom=' + custom
 };
 
 Accounts.emailTemplates.login = {
