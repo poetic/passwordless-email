@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script>
+      function GetURLParameter(sParam){
+       var sPageURL = window.location.href;
+       var sURLParts = sPageURL.split('/')
+       var sURLVariables = sURLParts[sURLParts.length-1].split('?')[1].split('&');
+       for (var i = 0; i < sURLVariables.length; i++){
+         var sParameterName = sURLVariables[i].split('=');
+         if (sParameterName[0] === sParam){
+          return sParameterName[1];
+         }
+       }
+      }
+
+      var base = GetURLParameter('base');
+      var custom = GetURLParameter('custom');
+
+      var web_url = decodeURIComponent(base);
+      var native_url = decodeURIComponent(custom);
+
+      window.location = native_url;
+      setTimeout(function(){
+        window.location = web_url;
+      }, 15000);
+    </script>
+  </head>
+  <body></body>
+</html>

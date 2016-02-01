@@ -1,6 +1,6 @@
 Package.describe({
   name: 'poetic:accounts-passwordless-email',
-  version: '0.0.10',
+  version: '0.0.11',
   summary: 'create and login users without requiring a password',
   git: 'https://github.com/poetic/accounts-passwordless-email',
   documentation: 'README.md'
@@ -24,6 +24,8 @@ Package.onUse(function(api) {
   ], 'server');
 
   api.addFiles('client/init-url-matching.js', 'client');
+
+  api.addAssets('public/deep-link-redirect.html', 'client');
 
   api.imply([
     'accounts-base', 'accounts-ui', 'accounts-password'
